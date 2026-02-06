@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Counter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Tip Counter</h1>
+        </header>
+
+        <div class="input-row">
+            <span class="dollar-sign">$</span>
+            <input type="number" id="tip-input" inputmode="decimal" step="0.01" min="0" placeholder="0.00">
+            <button id="add-btn" class="add-btn">Add</button>
+        </div>
+
+        <div class="total-display">
+            <span class="total-label">Total</span>
+            <span class="total-amount" id="total-amount">$0.00</span>
+        </div>
+
+        <ul id="tip-list" class="tip-list"></ul>
+
+        <p id="empty-state" class="empty-state">No tips yet</p>
+
+        <div class="action-row" id="action-row">
+            <button id="delete-btn" class="action-btn delete-btn" disabled>Delete Selected</button>
+            <button id="clear-btn" class="action-btn clear-btn">Clear All</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

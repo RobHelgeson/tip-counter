@@ -1,0 +1,277 @@
+:root {
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-color: #1a1a1a;
+    --text-muted: #6b7280;
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --danger-color: #ef4444;
+    --danger-hover: #dc2626;
+    --border-color: #e5e7eb;
+    --total-color: #059669;
+    --check-color: #6366f1;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --font-family: 'Outfit', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 16px;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+header {
+    text-align: center;
+    padding: 8px 0;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    letter-spacing: -0.03em;
+}
+
+/* Input row */
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card-bg);
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.dollar-sign {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    padding-left: 8px;
+}
+
+#tip-input {
+    flex: 1;
+    font-family: var(--font-family);
+    font-size: 1.25rem;
+    font-weight: 600;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 12px;
+    min-height: 44px;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    background: transparent;
+    color: var(--text-color);
+}
+
+#tip-input:focus {
+    border-color: var(--primary-color);
+}
+
+#tip-input::placeholder {
+    color: #cbd5e1;
+}
+
+.add-btn {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: 700;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0 20px;
+    min-height: 44px;
+    min-width: 44px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.add-btn:hover {
+    background: var(--primary-hover);
+}
+
+.add-btn:active {
+    transform: scale(0.97);
+}
+
+/* Total display */
+.total-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background: var(--card-bg);
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.total-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.total-amount {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--total-color);
+}
+
+/* Tip list */
+.tip-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tip-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--card-bg);
+    padding: 12px 16px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+    min-height: 44px;
+}
+
+.tip-item label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    cursor: pointer;
+    min-height: 44px;
+    /* Expand tap area */
+    margin: -12px -16px;
+    padding: 12px 16px;
+}
+
+/* Custom checkbox */
+.tip-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.tip-checkbox:checked {
+    background: var(--check-color);
+    border-color: var(--check-color);
+}
+
+.tip-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 11px;
+    border: solid #fff;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+}
+
+.tip-amount {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.tip-item.checked .tip-amount {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 32px 0;
+}
+
+.empty-state.hidden {
+    display: none;
+}
+
+/* Action buttons */
+.action-row {
+    display: flex;
+    gap: 10px;
+}
+
+.action-row.hidden {
+    display: none;
+}
+
+.action-btn {
+    flex: 1;
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 16px;
+    min-height: 44px;
+    cursor: pointer;
+    transition: background 0.15s, opacity 0.15s;
+}
+
+.action-btn:active {
+    transform: scale(0.97);
+}
+
+.delete-btn {
+    background: var(--danger-color);
+    color: #fff;
+}
+
+.delete-btn:hover:not(:disabled) {
+    background: var(--danger-hover);
+}
+
+.delete-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.clear-btn {
+    background: var(--border-color);
+    color: var(--text-color);
+}
+
+.clear-btn:hover {
+    background: #d1d5db;
+}
