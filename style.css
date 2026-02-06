@@ -71,6 +71,7 @@ h1 {
 
 #tip-input {
     flex: 1;
+    min-width: 0;
     font-family: var(--font-family);
     font-size: 1.25rem;
     font-weight: 600;
@@ -94,6 +95,7 @@ h1 {
 }
 
 .add-btn {
+    flex-shrink: 0;
     font-family: var(--font-family);
     font-size: 1rem;
     font-weight: 700;
